@@ -1,0 +1,38 @@
+from __future__ import print_function
+from __future__ import division
+import time
+import brickpi3
+BP = brickpi3.BrickPi3()
+x=1
+BP.set_sensor_type(BP.PORT_1, BP.SENSOR_TYPE.NXT_LIGHT_ON)#Makes the pi regcignize there is a light sensor on port 1.
+BP.set_sensor_type(BP.PORT_2, BP.SENSOR_TYPE.NXT_LIGHT_ON)# tells the pi there is a light sensor on port 2.
+try:# Try this stuff.
+    while True:#Keeps the program running until control + c is pressed.
+        try:
+            value=BP.get_sensor(BP.PORT_1)
+            print(value)
+            try:
+                valuex=BP.get_sensor(BP.PORT_2)
+                print(valuex)
+                if value<2800:
+                    while value<2800:
+                        BP.set_moter_power(BP.PORT_A,-50)
+                        BP.set_moter_power(BP.PORT_B,-100)
+                elif valuex>2800:
+                    while valuex<2800:
+                        BP.set_motor_power(BP.power(BP.PORT_A,-100)
+                        BP.set_motor_power(BP.power(BP.PORT_B,-50)
+                else:
+                    while value>2800 and valuex<2800
+                        BP.set_motor_power(BP.power(BP.PORT_A,-100)
+                        BP.set_motor_power(BP.power(BP.PORT_B,-100)
+            except brickpi3.SensorError as error:
+                print(error)
+            time.sleep(0.02)
+        except brickpi3.SensorError as errorx:
+            print(errorx)
+        time.sleep(0.02)
+                                       
+except KeyboardInterrupt:
+    BP.reset_all()
+#The white tiles are less then 2700 and the black tiles are more then 2900.

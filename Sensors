@@ -23,7 +23,9 @@ try:# Try this stuff.
                         BP.set_moter_power(BP.power(BP.PORT_A,70)
                         BP.set_moter_power(BP.power(BP.PORT_B,100)
                 else:
-                    print("hi")
+                    while value>2800 and valuex>2800
+                        BP.set_moter_power(BP.power(BP.PORT_A,100)
+                        BP.set_moter_power(BP.power(BP.PORT_B,100)
             except brickpi3.SensorError as error:
                 print(error)
             time.sleep(0.02)

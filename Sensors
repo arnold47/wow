@@ -16,16 +16,16 @@ try:# Try this stuff.
                 print(valuex)
                 if value<2800:
                     while value<2800:
-                        BP.set_moter_power(BP.PORT_B,100)
                         BP.set_moter_power(BP.PORT_A,70)
-                elif valuex<2800:
+                        BP.set_moter_power(BP.PORT_B,100)
+                elif valuex>2800:
                     while valuex<2800:
-                        BP.set_moter_power(BP.power(BP.PORT_A,70)
-                        BP.set_moter_power(BP.power(BP.PORT_B,100)
+                        BP.set_motor_power(BP.power(BP.PORT_A,100)
+                        BP.set_motor_power(BP.power(BP.PORT_B,70)
                 else:
-                    while value>2800 and valuex>2800
-                        BP.set_moter_power(BP.power(BP.PORT_A,100)
-                        BP.set_moter_power(BP.power(BP.PORT_B,100)
+                    while value>2800 and valuex<2800
+                        BP.set_motor_power(BP.power(BP.PORT_A,100)
+                        BP.set_motor_power(BP.power(BP.PORT_B,100)
             except brickpi3.SensorError as error:
                 print(error)
             time.sleep(0.02)
@@ -35,4 +35,4 @@ try:# Try this stuff.
                                        
 except KeyboardInterrupt:
     BP.reset_all()
-#The whight tiles are less then 2700 and the black tiles are more then 2900.
+#The white tiles are less then 2700 and the black tiles are more then 2900.
